@@ -1,3 +1,6 @@
+# FORKED
+This is downloaded from crates.io and reuploaded to github since original repo seems to be missing
+
 # transmission-rs
 [![](https://meritbadge.herokuapp.com/transmission)](https://crates.io/crates/transmission)
 [![Released API docs](https://docs.rs/transmission/badge.svg)](https://docs.rs/transmission)
