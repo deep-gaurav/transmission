@@ -103,7 +103,7 @@ impl ClientConfig {
             let d_dir = CString::new(download_dir.to_str().unwrap()).unwrap();
             transmission_sys::tr_variantDictAddStr(
                 &mut variant,
-                transmission_sys::TR_KEY_download_dir as usize,
+                transmission_sys::TR_KEY_download_dir,
                 d_dir.as_ptr(),
             );
         }
@@ -111,21 +111,21 @@ impl ClientConfig {
         // Set the UTP
         transmission_sys::tr_variantDictAddBool(
             &mut variant,
-            transmission_sys::TR_KEY_utp_enabled as usize,
+            transmission_sys::TR_KEY_utp_enabled,
             self.use_utp,
         );
 
         // Set the log level
         transmission_sys::tr_variantDictAddInt(
             &mut variant,
-            transmission_sys::TR_KEY_message_level as usize,
+            transmission_sys::TR_KEY_message_level,
             self.log_level,
         );
 
         // Set RPC
         transmission_sys::tr_variantDictAddBool(
             &mut variant,
-            transmission_sys::TR_KEY_rpc_enabled as usize,
+            transmission_sys::TR_KEY_rpc_enabled,
             self.rpc_enabled,
         );
 
@@ -135,7 +135,7 @@ impl ClientConfig {
                 let r_url = CString::new(rpc_url).unwrap();
                 transmission_sys::tr_variantDictAddStr(
                     &mut variant,
-                    transmission_sys::TR_KEY_rpc_url as usize,
+                    transmission_sys::TR_KEY_rpc_url,
                     r_url.as_ptr(),
                 );
             }
@@ -145,7 +145,7 @@ impl ClientConfig {
                 let r_port = CString::new(rpc_port).unwrap();
                 transmission_sys::tr_variantDictAddStr(
                     &mut variant,
-                    transmission_sys::TR_KEY_rpc_port as usize,
+                    transmission_sys::TR_KEY_rpc_port,
                     r_port.as_ptr(),
                 );
             }
